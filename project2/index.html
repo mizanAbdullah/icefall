@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        width: 300px;
+        height: 300px;
+        border: 2px solid red;
+    }
+</style>
+
+<body>
+    <div class="container">
+        icefall
+
+    </div>
+
+    <script>
+        const container=document.querySelector(".container");
+
+        const position=container.getBoundingClientRect();
+
+        console.log(`position top ${position.top}`);
+        console.log(`position bottom ${position.bottom}`);
+        console.log(`position left ${position.left}`);
+        console.log(`position right ${position.right}`);
+
+        container.onclick=insideValue;
+
+        function insideValue(e){
+            console.log(`x:${Math.floor(e.clientX-position.left)}`);
+            console.log(`y:${Math.floor(e.clientY-position.top)}`);
+
+            
+        }
+
+
+    </script>
+</body>
+
+</html>

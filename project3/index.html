@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        border: 2px solid red;
+    }
+</style>
+
+<body>
+    <canvas class="container"></canvas>
+
+    <script>
+        const container=document.querySelector(".container");
+        console.log(container);
+
+        const ctx=container.getContext("2d");
+
+        const position=container.getBoundingClientRect();
+
+        container.width=1000;
+        container.height=800;
+
+        let startingX,startingY,endingX,endingY,drawing=false,radius;
+
+
+        container.onmouseup=end;
+
+        container.onmousemove=move;
+
+        container.onmousedown=start;
+
+        function start(e){
+            e.preventDefault();
+            drawing=true;
+            startingX=Math.floor(e.clientX-position.left);
+            startingY=Math.floor(e.clientY-position.top);
+            console.log(`startingX: ${startingX}`);
+            console.log(`startingY: ${startingY}`);
+        }
+
+
+        function end(e){
+            e.preventDefault();
+            drawing=false;
+
+            // endingX=Math.floor(e.clientX-e.offsetX);
+            // endingY=Math.floor(e.clientY-e.offsetY);
+            
+            // console.log(`finalX:${endingX}`);
+            // console.log(`finalY:${endingY}`);
+
+        }
+
+        function move(e){
+            e.preventDefault();
+            if(!drawing){
+                return;
+            }
+
+            // endingX=Math.floor(startingX-e.offsetX);
+            // endingY=Math.floor(startingY-e.offsetY);
+            clearCanvas();
+            circleDraw(e);
+            
+
+        }
+
+
+        function circleDraw(e){
+            ctx.beginPath();
+            radius=Math.floor(Math.sqrt(Math.pow(parseInt(startingX-e.offsetX),2)+Math.pow(parseInt(startingY-e.offsetY),2)));
+            console.log(radius);
+            ctx.arc(startingX,startingY,radius,0,2*Math.PI);
+            ctx.stroke();
+            ctx.closePath();
+        }
+
+        function clearCanvas(){
+            ctx.clearRect(0,0,container.width,container.height);
+        }
+
+        // circleDraw();
+
+    </script>
+</body>
+
+</html>

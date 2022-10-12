@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse event</title>
+    <style>
+        .start{
+            height: 100vh;
+            background-color: lightcoral;
+        }
+        .root{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: lightgreen;
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="start">
+
+    </div>
+    <div class="root">
+        <div class="container">
+            Icefall
+        </div>
+    </div>
+</body>
+
+<script>
+    const container = document.querySelector(".container");
+
+    container.onclick = coordinate;
+
+    // function coordinate(e){
+    //     console.log(`clientX ${e.clientX}`);
+    //     console.log(`pageX ${e.pageX}`);
+    //     console.log(`screenX ${e.screenX}`);
+    //     console.log(`offsetX ${e.offsetX}`);
+
+    // }
+
+    function coordinate(e) {
+        console.log(`clientY ${e.clientY}`);
+        console.log(`pageY ${e.pageY}`);
+        console.log(`screenY ${e.screenY}`);
+        console.log(`offsetY ${e.offsetY}`);
+
+    }
+</script>
+
+</html>

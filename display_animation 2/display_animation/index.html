@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css" class="css">
+    <link rel="stylesheet" href="./styles/animation.css">
+    <title>Artamic App</title>
+</head>
+
+<body>
+    <div id="navbar" class="nav">
+
+        <ul>
+            <li class="navItem  navactive"><img src="./ICON/001-reshape-removebg-preview.png" alt=""></li>
+            <li class="navItem"><img src="./ICON/backward.png" alt=""></li>
+            <li class="navItem"><img src="./ICON/forward.png" alt=""></li>
+            <li class="navItem"><img src="./ICON/copy.png" alt=""></li>
+            <li class="navItem"><img src="./ICON/paste.png" alt=""></li>
+            <li class="navItem"><img src="./ICON/eraser-tool-removebg-preview.png" alt=""></li>
+            <li class="navItem" id="fill"><img src="./ICON/fill-removebg-preview.png" alt=""></li>
+            <li class="navItem" id="redo"><img src="./ICON/redo.png" alt=""></li>
+            <li class="navItem" id="undo"><img src="./ICON/undo.png" alt=""></li>
+            <li class="navItem" id="play"><img src="./ICON/tv.png" alt=""></li>
+        </ul>
+    </div>
+
+    <img id="trash" src="./ICON/trash-removebg-preview.png" alt="">
+
+    <div class="colorDiv" id="colorDiv">
+
+        <div id="fillColor">
+            <img src="./ICON/plus.png" alt="">
+        </div>
+
+        <span class="color"></span>
+        <span class="color"></span>
+        <span class="color"></span>
+        <span class="color"></span>
+        <span class="color"></span>
+        <span class="color"></span>
+        <span class="color"></span>
+        <span class="color"></span>
+        <span class="color"></span>
+        <span class="color"></span>
+        <span class="color"></span>
+        <span class="color"></span>
+    </div>
+    <div class="animation-player" id="animation-player">
+        <button id="closeButton">close</button>
+        <canvas id="output"></canvas>
+        <div class="time">
+            <span id="animationDuration">00 : 00</span>
+            <input type="range" id="timeFlow" min="0" max="60" value="30">
+        </div>
+        <div class="control">
+            <img name="" src="./ICON/previous.png" alt="">
+            <img name="" id="pauseImg" src="./ICON/pause-button.png" alt="">
+            <img name="" id="playImg" src="./ICON/next-track.png" alt="">
+            <img name="" src="./ICON/next.png" alt="">
+        </div>
+    </div>
+
+
+    <div class="properties">
+
+        <div class="strokeOpacity">
+            <ul>
+                <li>Stroke: <input type="range" name="" id=""></li>
+                <li>Opacity: <input type="range" name="" id=""></li>
+            </ul>
+        </div>
+
+        <div class="size">
+            <ul>
+                <li> W: <input id="width" type="text"></li>
+                <li> H: <input id="height" type="text"></li>
+            </ul>
+        </div>
+
+        <div class="position">
+            <ul>
+                <li> X: <input id="x" type="text"></li>
+                <li> Y: <input id="y" type="text"></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div id="root">
+
+        <div class="sideNavbar" id="sideNavbar">
+            <img class="icon active" name="select" src="./ICON/move-selector-removebg-preview.png" alt="">
+            <img class="icon" name="circle" src="./ICON/circle-removebg-preview.png" alt="">
+            <img class="icon" name="rectangle" src="./ICON/square.png" alt="">
+            <img class="icon" name="triangle" src="./ICON/triangle.png" alt="">
+            <img class="icon" name="line" src="./ICON/diagonal-line-removebg-preview.png" alt="">
+            <img class="icon" name="text" src="./ICON/text-removebg-preview.png" alt="">
+            <img class="icon" name="brush" src="./ICON/brush-removebg-preview.png" alt="">
+            
+        </div>
+
+        <canvas id="canvas">
+
+        </canvas>
+
+    </div>
+
+
+    <script src="./scripts/app.js" type="module">
+
+
+
+    </script>
+    <!-- <script src="test.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+
+            }
+
+            introduce() {
+                console.log(`My Name is ${this.name}`)
+            }
+
+            showAge() {
+                console.log(`i can't tell my age`)
+            }
+
+        }
+
+        class Professor extends Person{
+            constructor(name,teaches){
+                super(name);
+                this.teaches=teaches;
+            }
+
+            introduce(){
+                console.log(`My name is ${this.name} and i teaches ${this.teaches}`)
+            }
+        }
+
+
+        const person1 = new Professor('Mizan','Bangla');
+        person1.introduce();
+        person1.showAge();
+    </script>
+</body>
+
+</html>

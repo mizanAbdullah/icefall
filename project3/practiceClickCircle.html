@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <style>
+        canvas{
+            border: 10px solid red;
+        }
+
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <canvas></canvas>
+</body>
+
+<script>
+    const canvas=document.querySelector("canvas");
+    const ctx=canvas.getContext("2d");
+    canvas.width="800";
+    canvas.height="600";
+
+    const position = canvas.getBoundingClientRect();
+
+    let startX,startY;
+    canvas.onmousedown=start;
+
+
+    function start(e){
+        startX=e.clientX-position.left;
+        startY=e.clientY-position.top;
+        draw();
+       
+    }
+
+
+
+    function draw(){
+        ctx.beginPath();
+        ctx.arc(startX,startY,20,0,2*Math.PI);
+        ctx.stroke();
+        ctx.closePath();
+
+    }
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+</head>
+<style>
+    body{
+        height: 200vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        width: 800px;
+        height: 500px;
+        border: 6px solid lightblue;
+    }
+</style>
+<body>
+
+    <div class="container">
+
+    </div>
+    
+    <script>
+        const container=document.querySelector(".container");
+
+       container.onclick=show;
+
+       function show(e){
+        console.log(`clientY: ${e.clientY}`);
+        console.log(`pageY: ${e.pageY}`);
+        console.log(`screenX: ${e.screenX}`);
+        console.log(`offsetX: ${e.offsetX}`);
+
+
+       }
+    </script>
+</body>
+</html>

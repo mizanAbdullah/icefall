@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas></canvas>
+    <script>
+        const canvas = document.querySelector("canvas");
+        const ctx = canvas.getContext('2d');
+
+        canvas.height = 800;
+        canvas.width = 1000;
+
+        class Draw {
+            constructor(radius==20){
+                this.radius=radius;
+            }
+
+
+            circle(radius) {
+                ctx.beginPath();
+                ctx.arc(100, 100, radius, 0, 2 * Math.PI);
+                ctx.stroke();
+                ctx.closePath();
+            }
+
+
+            rect() {
+                ctx.rect(200, 200, 100, 200);
+                ctx.fillStyle = "green";
+                ctx.fill();
+            }
+
+            sqr() {
+                ctx.rect(400, 400, 200, 200);
+                ctx.fillStyle = "red";
+                ctx.fill();
+            }
+
+            line() {
+                ctx.beginPath();
+                ctx.moveTo(620, 620);
+                ctx.lineTo(780, 620);
+                ctx.stroke();
+            }
+
+        }
+
+        const c1 = new Draw();
+        c1.circle();
+        c1.rect();
+        c1.sqr();
+        c1.line();
+
+
+
+    </script>
+</body>
+
+</html>

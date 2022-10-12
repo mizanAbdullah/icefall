@@ -1,0 +1,14 @@
+{
+  "name": "artamic",
+  "version": "1.0.0",
+  "description": "artamic screen boilerplate.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "artamic-screen-code"
+  ],
+  "author": "artamic",
+  "license": "ISC"
+}
